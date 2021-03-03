@@ -9,7 +9,9 @@ class MyClock extends React.Component {
   componentDidMount() {
     this.myid = setInterval(() => this.changeDate(), 1000);
   }
-  componentWillUnmount() {}
+  componentWillUnmount() {
+    clearInterval(this.myid);
+  }
   changeDate() {
     this.setState({ mydate: new Date() });
   }
